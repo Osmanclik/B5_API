@@ -1,12 +1,9 @@
 package api.test.day06;
 
-import api.test.POJOTEMPLATES.BookCart;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
-
-import java.util.Map;
 
 public class POJO_BookCart {
 

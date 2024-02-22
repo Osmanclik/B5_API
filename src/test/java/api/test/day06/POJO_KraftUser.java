@@ -1,8 +1,5 @@
 package api.test.day06;
 
-import api.test.POJOTEMPLATES.Education;
-import api.test.POJOTEMPLATES.Experience;
-import api.test.POJOTEMPLATES.KraftUser;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
