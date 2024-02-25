@@ -13,16 +13,16 @@ import static org.testng.AssertJUnit.assertEquals;
 
 public class Authorization {
     @BeforeClass
-    public void beforeClass(){
-        baseURI="https://www.krafttechexlab.com/sw/api/v1";
+    public void beforeClass() {
+        baseURI = "https://www.krafttechexlab.com/sw/api/v1";
     }
 
     @Test
     public void t_login() {
-        String email="eddiem@kraft.com";
-        String password="eddiem12";
+        String email = "osmancl@gmail.com";
+        String password = "182216118Os";
 
-        Response response = given().accept(ContentType.MULTIPART)
+        Response response = given().accept(ContentType.MULTIPART) //yada ANY
                 .and()
                 .formParam("email", email)
                 .and()
@@ -30,17 +30,17 @@ public class Authorization {
                 .and()
                 .when()
                 .post("/allusers/login");
-        assertEquals(response.statusCode(),200);
+        assertEquals(response.statusCode(), 200);
         //response.prettyPrint();
-        String token=response.path("token");
+        String token = response.path("token");
         System.out.println("token = " + token);
 
     }
 
     @Test
     public static String getToken() {
-        String email="eddiem@kraft.com";
-        String password="eddiem12";
+        String email = "osmancl@gmail.com";
+        String password = "182216118Os";
 
         Response response = given().accept(ContentType.MULTIPART)
                 .and()
@@ -51,12 +51,12 @@ public class Authorization {
                 .when()
                 .post("/allusers/login");
 
-        String token=response.path("token");
-       return token;
+        String token = response.path("token");
+        return token;
     }
 
     @Test
-    public static Map<String,Object> getToken(String email,String password) {
+    public static Map<String, Object> getToken(String email, String password) {
 
 
         Response response = given().accept(ContentType.MULTIPART)
@@ -68,10 +68,10 @@ public class Authorization {
                 .when()
                 .post("/allusers/login");
 
-        String token=response.path("token");
+        String token = response.path("token");
 
-        Map<String,Object> authorization=new HashMap<>();
-        authorization.put("token",token);
+        Map<String, Object> authorization = new HashMap<>();
+        authorization.put("token", token);
         return authorization;
     }
 
